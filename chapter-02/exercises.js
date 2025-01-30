@@ -25,11 +25,36 @@ LOGS =>
 #####
 
 */
+/*
+I: Function takes in a number represented by 'size'. 
+O: Function should output the dsired triangle size when logged to the console. 
+C: N/A
+E: N/A
+*/
 
-function triangles() {
-  
+function triangles(size) {
+  // Loop through numbers 1 to 'size'
+  for (let i = 1; i <= size; i++) {
+    // Log the triangle size
+    console.log('#'.repeat(i));
+  }
 }
 
+// // Example 1: Triangle of size 3
+// triangles(3);
+// // Output:
+// // #
+// // ##
+// // ###
+
+// // Example 2: Triangle of size 5
+// triangles(5);
+// // Output:
+// // #
+// // ##
+// // ###
+// // ####
+// // #####
 
 ////////////////////////////////////////////////////////////////////////////////
 // fizzBuzz ////////////////////////////////////////////////////////////////////
@@ -46,9 +71,32 @@ on the number:
   - if the number is divisible by both 3 & 5, log "fizzbuzz"
   - if the number is not divisible by 3 or 5, log the number
 */
-
+/*
+I: Function takes in two numbers represented by the parameters 'start' and 'end'. 
+O: Function should access each number from start to end log diffferent statements depending on the number. 
+C:
+E:
+*/
 function fizzBuzz(start, end) {
-  
+  // Use a for loop from start to end
+  for (let i = start; i <= end; i++) {
+    // If divisible by 3 and 5. Loog "fizzbuzz"
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("fizzbuzz");
+    }
+    // Else if diviible by 3, log "fizz"
+    else if (i % 3 === 0) {
+      console.log("fizz")
+    }
+    // Else if divisible by 5 logs "buzz"
+    else if (i % 5 === 0) {
+      console.log("buzz");
+    }
+    // If the number is not divisible by 3 or 5, log the number
+    else {
+      console.log(i);
+    }
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -80,11 +128,53 @@ LOGS =>
  #
 
 */
+/*
+I: Function takes in a parameter of `x` that represents the "size" of the chessboard you are going to log.
+O: Function should log a collection of spaces and #'s creating the appearance of a chessboard.
+C: Must use linebrak characters. 
+E: N/A
+*/
 
 function drawChessboard(x) {
+  // Initialize storage for the chessboard string
+  let chessboard = '';
 
+  // Loop through everu row
+  for (let i = 0; i < x; i++) {
+    let row = '';
 
+    // Create the row
+    for (let j = 0; j < x; j++) {
+      // Change from space to # by column index and rows
+      if ((i + j) % 2 === 0) {
+        row += ' ';
+      } else {
+        row += '#';
+      }
+    }
+
+    // Insert chessboard and a newline to follow
+    chessboard += row + `\n`;
+  }
+
+  // Log chessboard
+  console.log(chessboard);
 }
+
+// Example 1: Chessboard of size 4
+// drawChessboard(4);
+// Output:
+//  # #
+// # # 
+//  # #
+// # # 
+
+// Example 2: Chessboard of size 3
+// drawChessboard(3);
+// Output:
+//  # 
+// # #
+//  # 
 
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
